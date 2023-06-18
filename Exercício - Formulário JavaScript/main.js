@@ -1,11 +1,29 @@
 // Preenche login
+
+/*
 function preencherLogin() {
-    var nome = document.getElementById("nome").value;
-    var sobrenome = document.getElementById("sobrenome").value;
-    var login = nome.toLowerCase() + "." + sobrenome.toLowerCase();
-  
-    document.getElementById("login").value = login;
-  }
+  var nome = document.getElementById("nome").value;
+  var sobrenome = document.getElementById("sobrenome").value;
+  var login = nome.toLowerCase() + "." + sobrenome.toLowerCase();
+
+  document.getElementById("login").value = login;
+} 
+*/
+
+// Preenche login
+//* Impeça que espaços em banco façam parte do login.
+
+function preencherLogin() {
+  var nomeInput = document.getElementById("nome");
+  var sobrenomeInput = document.getElementById("sobrenome");
+  var loginInput = document.getElementById("login");
+
+  var nome = nomeInput.value.trim().toLowerCase().replace(/\s/g, '');
+  var sobrenome = sobrenomeInput.value.trim().toLowerCase().replace(/\s/g, '');
+  var login = nome + "." + sobrenome;
+
+  loginInput.value = login;
+}
 
   // Preenche os dados do endereço
 function preencherEndereco(dados) {
